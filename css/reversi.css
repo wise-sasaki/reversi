@@ -39,10 +39,8 @@
     cursor: pointer;
     user-select: none;
     grid-column: 8 span;
-    font-size: 2em;
     width: 50px;
     height: 50px;
-    line-height: 50px;
     border: solid 1px black;
     border-radius: 5px;
     text-align: center;
@@ -73,6 +71,8 @@
 .small-effect {
     position: relative;
 }
+
+/* エフェクトなどのアニメーション */
 .small-effect::before {
     content: '';
     position: absolute;
@@ -91,7 +91,7 @@
     content: '';
     position: absolute;
     top: 19px;
-    left: 19x;
+    left: 19px;
     transform-origin: center;
     width: 1px;
     height: 1px;
@@ -124,7 +124,7 @@
     content: '';
     position: absolute;
     top: 19px;
-    left: 19x;
+    left: 19px;
     transform-origin: center;
     width: 1px;
     height: 1px;
@@ -158,7 +158,7 @@
     content: '';
     position: absolute;
     top: 19px;
-    left: 19x;
+    left: 19px;
     transform-origin: center;
     width: 1px;
     height: 1px;
@@ -173,13 +173,56 @@
 @keyframes expansion-effect {
     0% {
         opacity: 0;
-        transform:scale(0);
+        transform: scale(0);
     }
     50%{
         opacity: 0.75;
     }
     100%{
         opacity: 0;
-        transform:scale(60);
+        transform: scale(60);
+    }
+}
+/* レスポンシブ対応 */
+@media screen and (max-width: 375px) {
+    #reversi-wrap {
+        width: 360px;
+    }
+    #reversi-frame .reversi-panel {
+        width: 40px;
+        height: 40px;
+        padding: 2px;
+    }
+    .blank{
+        width: 34px;
+        height: 34px;
+    }
+    .circle{
+        width: 34px;
+        height: 34px;
+    }
+    .small-effect::before {
+        top: 15px;
+        left: 15px;
+    }
+    .small-effect::after {
+        top: 15px;
+        left: 15px;
+    }
+    .midium-effect::before {
+        top: 15px;
+        left: 15px;
+    }
+    .midium-effect::after {
+        top: 15px;
+        left: 15px;
+    }
+    .large-effect::before {
+        top: 15px;
+        left: 15px;
+    }
+    .large-effect::after {
+        top: 15px;
+        left: 15px;
     }
 }
