@@ -1,0 +1,185 @@
+#reversi-wrap {
+    width: 435px;
+    margin: 0 auto;
+}
+#reversi-wrap div {
+    box-sizing: border-box;
+}
+#reversi-title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+#reversi-status {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#reversi-turn, #reversi-score, #reversi-player {
+    grid-column: 1 span;
+}
+#reversi-score {
+    text-align: center;
+}
+#reversi-player {
+    text-align: right;
+}
+#reversi-frame {
+    display: grid;
+    border: solid 1px black;
+    grid-template-columns: repeat(64, 1fr);
+    padding: 5px 2px 2px 5px;
+    background-color: green;
+}
+#reversi-modal {
+    position: absolute;
+    z-index: 1;
+}
+#reversi-frame .reversi-panel {
+    cursor: pointer;
+    user-select: none;
+    grid-column: 8 span;
+    font-size: 2em;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: solid 1px black;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 3px;
+    padding: 4px;
+}
+#reversi-frame .reversi-panel:hover {
+    background-color: lightgray;
+}
+.blank{
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.circle{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+    border-radius: 20px;
+}
+.white{
+    background-color: white;
+}
+.black{
+    background-color: black;
+}
+.small-effect {
+    position: relative;
+}
+.small-effect::before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    transform-origin: center;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    animation-name: small-effect;
+    animation-duration: .5s;
+    animation-timing-function:easy-out;
+}
+.small-effect::after {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 19x;
+    transform-origin: center;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: darkturquoise;
+    animation-name: expansion-effect;
+    animation-duration: .5s;
+    animation-delay:100ms;
+    animation-timing-function:easy-out;
+}
+.midium-effect {
+    position: relative;
+}
+.midium-effect::before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    transform-origin: center;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: gold;
+    animation-name: small-effect;
+    animation-duration: .25s;
+    animation-iteration-count:infinite;
+    animation-timing-function:easy-out;
+}
+.midium-effect::after {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 19x;
+    transform-origin: center;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: greenyellow;
+    animation-name: expansion-effect;
+    animation-duration: .25s;
+    animation-delay:100ms;
+    animation-iteration-count:infinite;
+    animation-timing-function:easy-out;
+}
+.large-effect {
+    position: relative;
+}
+.large-effect::before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    transform-origin: center;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: red;
+    animation-name: small-effect;
+    animation-duration: .1s;
+    animation-iteration-count:infinite;
+    animation-timing-function:easy-out;
+}
+.large-effect::after {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 19x;
+    transform-origin: center;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: orangered;
+    animation-name: expansion-effect;
+    animation-duration: .1s;
+    animation-iteration-count:infinite;
+    animation-delay:100ms;
+    animation-timing-function:easy-out;
+}
+@keyframes expansion-effect {
+    0% {
+        opacity: 0;
+        transform:scale(0);
+    }
+    50%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity: 0;
+        transform:scale(60);
+    }
+}
