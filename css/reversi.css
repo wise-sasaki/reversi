@@ -184,7 +184,7 @@
     }
 }
 /* レスポンシブ対応 */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 415px) {
     #reversi-wrap {
         width: 360px;
     }
